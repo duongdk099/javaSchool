@@ -59,6 +59,8 @@ class UnPoint {
 	 */
 	UnPoint(double a, double o) {
 		// TODO a completer
+		this.abscisse = (int)a;
+		this.ordonnee = (int)o;
 	}
 
 	/**
@@ -92,6 +94,10 @@ class UnPoint {
 	int calculerDistance(UnPoint p) {
 		int res=0;
 		// TODO a completer
+		int oX = p.abscisse - this.abscisse;
+		int oY = p.ordonnee - this.ordonnee;
+		int resi = oX*oX + oY*oY;
+		res = (int)Math.sqrt(resi);
 		return(res);
 	}
 
@@ -107,6 +113,7 @@ class UnPoint {
 	int calculerCarreDistance(UnPoint p) {
 		int res=0;
 		// TODO a completer
+		res = calculerDistance(p) * calculerDistance(p);
 		return res;
 	}
 

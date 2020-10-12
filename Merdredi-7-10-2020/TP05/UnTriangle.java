@@ -47,15 +47,16 @@ class UnTriangle {
 	UnTriangle(UnTriangle t) {
 		
 		// TODO a completer
-		if(t!=null){
-		this.A = t.A;
-		this.B = t.B;
-		this.C = t.C;
-		}
-		else{
+		if(t ==null){
 			this.A= new UnPoint();
 			this.B= new UnPoint();
 			this.C= new UnPoint();
+		
+		}
+		else{
+		this.A = t.A;
+		this.B = t.B;
+		this.C = t.C;
 		}
 
 	}
@@ -82,17 +83,20 @@ class UnTriangle {
 	 */
 	boolean etreRectangle() {
 		boolean rectangle = false;
-		double distanceAB =this.A.calculerDistance(B);
-        double distanceAC =this.A.calculerDistance(C);
-        double distanceBC =this.B.calculerDistance(C);
+		double distanceAB =this.A.calculerCarreDistance(B);
+        double distanceAC =this.A.calculerCarreDistance(C);
+        double distanceBC =this.B.calculerCarreDistance(C);
         
-        if((distanceAB*distanceAB +distanceAC*distanceAC) == distanceBC*distanceBC )  {
-            rectangle = true;
+		if( (distanceAB + distanceAC == distanceBC) 
+		|| (distanceAB + distanceBC == distanceAC)
+		|| (distanceAC + distanceBC == distanceAB)) {
+			rectangle = true;
+			return rectangle;
         } else {
-            rectangle = false;
+            return rectangle;
         }
 		// TODO a completer
-		return (rectangle);
+		
 	}
 
 	/**

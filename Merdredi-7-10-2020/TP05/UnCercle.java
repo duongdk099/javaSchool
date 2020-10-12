@@ -38,6 +38,7 @@ class UnCercle {
 	 */
 	UnCercle(int x, int y, int r) {
 		// TODO a completer
+		
 	}
 
 	/**
